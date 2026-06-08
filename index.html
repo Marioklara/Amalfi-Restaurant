@@ -31,7 +31,7 @@
         /* LAYOUT */
         .main-container { display: flex; min-height: calc(100vh - 150px); }
 
-        /* HERO BEREICH (Hintergrundbild) */
+        /* HERO BEREICH */
         .hero-section { flex: 1.5; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; text-align: center; background-image: url('pizza.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
         .hero-section::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 100%); z-index: 1; }
         
@@ -55,7 +55,7 @@
         .menu-categories a:hover { color: #fff; }
         .menu-categories a.active { color: var(--text-main); border-bottom-color: var(--red); }
 
-        /* TAB ANIMATION (Profi-Feature) */
+        /* TAB ANIMATION */
         .menu-tab { display: none; animation: fadeIn 0.4s ease-in-out; }
         .menu-tab.active-tab { display: block; }
         
@@ -123,17 +123,31 @@
                 <a onclick="switchTab('pasta', this)">Pasta</a>
                 <a onclick="switchTab('vorspeisen', this)">Vorspeisen & Salate</a>
                 <a onclick="switchTab('fruehstueck', this)">Frühstück</a>
+                <a onclick="switchTab('eis', this)">Eiskarte</a>
                 <a onclick="switchTab('getraenke', this)">Getränke</a>
             </nav>
 
             <div class="menu-list">
                 
                 <div id="pizza" class="menu-tab active-tab">
-                    <h3>Pizza</h3>
-                    <p class="menu-note">Pizza, Ø 33cm (Platzhalter-Preise)</p>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">1. Margherita</span><span class="item-price-single">8,50 €</span></div><span class="item-description">Tomatensauce, Käse</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">2. Prosciutto</span><span class="item-price-single">9,50 €</span></div><span class="item-description">Tomatensauce, Käse, Vorderschinken</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">3. Salami</span><span class="item-price-single">9,50 €</span></div><span class="item-description">Tomatensauce, Käse, Salami</span></div>
+                    <h3>Pizza / Pizze</h3>
+                    <p class="menu-note">ca. Ø 33 cm</p>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Margherita</span><span class="item-price-single">10,90 €</span></div><span class="item-description">Tomatensoße, Mozzarella</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Prosciutto</span><span class="item-price-single">12,50 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Vorderschinken</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Salami</span><span class="item-price-single">12,50 €</span></div><span class="item-description">Tomatensoße, Mozzarella, italienische Salami</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Funghi</span><span class="item-price-single">12,20 €</span></div><span class="item-description">mit Champignons, Tomaten, Mozzarella</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Napoletana</span><span class="item-price-single">12,90 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Sardellen, Olivenöl</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Hawaii</span><span class="item-price-single">12,90 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Vorderschinken, Ananas</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Mafiosa</span><span class="item-price-single">12,80 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Peperoniwurst, Zwiebeln, Peperoni, scharfe Tomatensoße</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Vegetariana</span><span class="item-price-single">12,50 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Gemüse der Saison</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Capricciosa</span><span class="item-price-single">14,80 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Artischocken, Vorderschinken, Paprika, Champignons, Oliven</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rucola e Parma</span><span class="item-price-single">15,90 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Parmaschinken, Rucola, Parmesan Splitt</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rustica</span><span class="item-price-single">12,20 €</span></div><span class="item-description">Salami, Champignons</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Montanara</span><span class="item-price-single">12,20 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Champignons, Vorderschinken</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tonno</span><span class="item-price-single">14,20 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Thunfisch, Zwiebeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Frutti di Mare</span><span class="item-price-single">16,90 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Meeresfrüchte</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Quattro Stagione</span><span class="item-price-single">14,90 €</span></div><span class="item-description">Salami, Champignons, Paprika, Vorderschinken, Oliven, Mozzarella</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Calzone</span><span class="item-price-single">13,20 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Salami, Vorderschinken, Champignons, Bolognesesoße</span></div>
                 </div>
 
                 <div id="pasta" class="menu-tab">
@@ -158,23 +172,23 @@
 
                 <div id="vorspeisen" class="menu-tab">
                     <h3>Antipasti / Vorspeisen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bruschetta</span><span class="item-price-single">6,00 €</span></div><span class="item-description">frische Tomaten, Knoblauch, Basilikum</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Caprese</span><span class="item-price-single">8,00 €</span></div><span class="item-description">Tomaten, Mozzarella, Basilikum</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Carpaccio</span><span class="item-price-single">14,00 €</span></div><span class="item-description">vom Rinderfilet, Ruccola, Grana Padano</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pizza Pane</span><span class="item-price-single">7,00 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Stracciatella Suppe</span><span class="item-price-single">6,00 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Crema di Pomodoro</span><span class="item-price-single">6,00 €</span></div><span class="item-description">italienische Tomatensuppe mit Sahne und Basilikum</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Korb Brötchen 4x hausgemacht</span><span class="item-price-single">4,00 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bruschetta</span><span class="item-price-single">6,90 €</span></div><span class="item-description">frische Tomaten, Knoblauch, Basilikum</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Caprese</span><span class="item-price-single">8,90 €</span></div><span class="item-description">Tomaten, Mozzarella, Basilikum</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Carpaccio</span><span class="item-price-single">14,20 €</span></div><span class="item-description">vom Rinderfilet, Ruccola, Grana Padano</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pizza Pane</span><span class="item-price-single">7,60 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Stracciatella Suppe</span><span class="item-price-single">6,60 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Crema di Pomodoro</span><span class="item-price-single">6,60 €</span></div><span class="item-description">italienische Tomatensuppe mit Sahne und Basilikum</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Korb Brötchen 4x hausgemacht</span><span class="item-price-single">3,60 €</span></div></div>
 
                     <h3>Insalata / Salate</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Verde</span><span class="item-price-single">5,00 €</span></div><span class="item-description">grüner Salat mit Oliven</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Mista</span><span class="item-price-single">6,50 €</span></div><span class="item-description">gemischter Salat</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Italia</span><span class="item-price-single">7,50 €</span></div><span class="item-description">mit Schinken, Käse und Ei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Nizza</span><span class="item-price-single">8,50 €</span></div><span class="item-description">mit Thunfisch, Sardellen und Ei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata di Pomodoro</span><span class="item-price-single">6,50 €</span></div><span class="item-description">Tomaten, Zwiebeln</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Cesare</span><span class="item-price-single">9,00 €</span></div><span class="item-description">mit Grana Padano, Putenstreifen</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Hawaii</span><span class="item-price-single">8,50 €</span></div><span class="item-description">Schinken, Ananas, Mozzarella</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Beilagensalat</span><span class="item-price-single">4,50 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Verde</span><span class="item-price-single">6,20 €</span></div><span class="item-description">grüner Salat mit Oliven</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Mista</span><span class="item-price-single">7,90 €</span></div><span class="item-description">gemischter Salat</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Italia</span><span class="item-price-single">12,50 €</span></div><span class="item-description">mit Schinken, Käse und Ei</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Nizza</span><span class="item-price-single">11,20 €</span></div><span class="item-description">mit Thunfisch, Sardellen und Ei</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata di Pomodoro</span><span class="item-price-single">7,90 €</span></div><span class="item-description">Tomaten, Zwiebeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Cesare</span><span class="item-price-single">14,20 €</span></div><span class="item-description">mit Grana Padano, Putenstreifen</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Hawaii</span><span class="item-price-single">12,80 €</span></div><span class="item-description">Schinken, Ananas, Mozzarella</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Beilagensalat</span><span class="item-price-single">4,40 €</span></div></div>
                 </div>
 
                 <div id="fruehstueck" class="menu-tab">
@@ -186,9 +200,32 @@
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amalfi</span><span class="item-price-single">9,90 €</span></div><span class="item-description">Brötchen Butter, Konfitüre, Caprese (Tomaten und Mozzarella), 2 Eier</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amalfitana</span><span class="item-price-single">15,90 €</span></div><span class="item-description">1 Glas Prosecco 0,1 l., 1 Glas Orangensaft 0,1 l., 3 Brötchen, Butter, Konfitüre, 2 Eier, Käse, Schinken, Salami</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Omelette</span><span class="item-price-single">7,20 €</span></div><span class="item-description">mit 3 Eiern natur (je weitere Zutat +1,00 €)</span></div>
+                </div>
 
-                    <h3>Dessert</h3>
-                    <div class="menu-item"><span class="item-description">Täglich wechselnde Desserts, wie Tiramisu, verschiedene Kuchen und natürlich unser Hausgemachtes Speiseeis.</span></div>
+                <div id="eis" class="menu-tab">
+                    <h3>Hausgemachtes Eis</h3>
+                    <p class="menu-note" style="color: var(--text-main); font-weight: bold; border: 1px solid var(--red); padding: 10px; display: inline-block;">1 Kugel Eis nach Wahl: 2,00 €</p>
+                    
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bananensplit</span><span class="item-price-single">9,90 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Banane, Schokostreusel, Schoko-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Eis</span><span class="item-price-single">8,90 €</span></div><span class="item-description">Eis mit Vanillegeschmack, weiße Schokoraspel, Erdbeer-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Magic Mouse</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pinocchio Eis</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Zuckerstreusel und Sahne</span></div>
+                    
+                    <h3>Eis-Getränke</h3>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eiskaffee</span><span class="item-price-single">klein 6,90 € | groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kaffee, Mokkabohne und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eisschokolade</span><span class="item-price-single">klein 6,90 € | groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kakao, Schokostreusel, Schoko-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Milchshake</span><span class="item-price-single">5,90 € (mit Sahne 6,40 €)</span></div><span class="item-description">Milch und Eissorten nach Ihrer persönlichen Wahl</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Riesen Milchshake</span><span class="item-price-single">7,30 € (mit Sahne 8,20 €)</span></div></div>
+
+                    <h3>Eisportionen</h3>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Kleine Portion</span><span class="item-price-single">5,70 €</span></div><span class="item-description">3 Kugeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Mittlere Portion</span><span class="item-price-single">7,60 €</span></div><span class="item-description">4 Kugeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Große Portion</span><span class="item-price-single">9,50 €</span></div><span class="item-description">5 Kugeln</span></div>
+
+                    <h3>Extras</h3>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Portion Sahne / Portion Sauce / Extra Streusel</span><span class="item-price-single">je 1,00 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Extra Likör</span><span class="item-price-single">2,50 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Extra Früchte</span><span class="item-price-single">3,00 €</span></div></div>
                 </div>
 
                 <div id="getraenke" class="menu-tab">
@@ -232,21 +269,6 @@
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Grappa</span><span class="item-price-single">4 cl. 4,90 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amaretto / Limoncello</span><span class="item-price-single">4 cl. 4,20 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bailey's</span><span class="item-price-single">5 cl. 4,90 €</span></div></div>
-
-                    <h3>Cafeteria (Heiße Getränke)</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Milchkaffee</span><span class="item-price-single">3,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Café</span><span class="item-price-single">2,90 € (groß: 3,90 €)</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Espresso</span><span class="item-price-single">2,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Espresso Macchiato</span><span class="item-price-single">2,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Espresso Doppio</span><span class="item-price-single">3,80 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Espresso Coretto</span><span class="item-price-single">4,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Cappuccino</span><span class="item-price-single">3,60 € (groß: 4,60 €)</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Latte Macchiato</span><span class="item-price-single">4,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Heiße Schokolade</span><span class="item-price-single">3,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Schokoccino -Cappuccino mit Schokolade-</span><span class="item-price-single">3,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tee, verschiedene Sorten</span><span class="item-price-single">2,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Affogato (Espresso mit Vanilleeis)</span><span class="item-price-single">4,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Portion Sahne extra</span><span class="item-price-single">0,50 €</span></div></div>
                 </div>
 
             </div>
