@@ -10,7 +10,6 @@
         a { text-decoration: none; color: inherit; transition: color 0.3s; }
         ul { list-style: none; padding: 0; margin: 0; }
 
-        /* HEADER & LOGO */
         header { background-color: #000; padding: 20px; border-bottom: 3px solid #d32f2f; display: flex; justify-content: flex-end; align-items: center; position: relative; }
         header::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 33.33%; height: 3px; background-color: #2e7d32; }
         header::before { content: ''; position: absolute; bottom: -3px; left: 33.33%; width: 33.33%; height: 3px; background-color: #fff; }
@@ -20,7 +19,6 @@
         .logo-area p { margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #aaa; }
         .logo-area .location { font-size: 1.1rem; color: #fff; margin-top: 5px; }
 
-        /* MAIN LAYOUT */
         .main-container { display: flex; min-height: calc(100vh - 150px); }
 
         .hero-section { flex: 1.5; position: relative; background-color: #222; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; text-align: center; }
@@ -36,7 +34,6 @@
         .btn-red { background-color: #d32f2f; border-color: #d32f2f; }
         .btn-red:hover { background-color: #b71c1c; border-color: #b71c1c; color: #fff; }
 
-        /* MENU SECTION */
         .menu-section { flex: 1; background-color: #000; padding: 60px 40px; }
         .menu-section h2 { font-size: 2.5rem; margin-top: 0; color: #fff; border-bottom: 2px solid #333; padding-bottom: 15px; }
 
@@ -44,29 +41,29 @@
         .menu-categories a { color: #aaa; font-weight: bold; font-size: 1rem; text-transform: uppercase; padding-bottom: 5px; border-bottom: 2px solid transparent; cursor: pointer; }
         .menu-categories a:hover, .menu-categories a.active { color: #fff; border-bottom-color: #d32f2f; }
 
-        .menu-tab { display: none; /* Versteckt standardmäßig alle Tabs */ }
-        .menu-tab.active-tab { display: block; /* Zeigt nur das aktive Tab */ }
+        .menu-tab { display: none; }
+        .menu-tab.active-tab { display: block; }
 
-        .menu-list h3 { color: #d32f2f; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; margin-top: 0; }
-        .menu-note { font-style: italic; color: #aaa; font-size: 0.9rem; margin-top: -10px; margin-bottom: 20px; }
+        .menu-list h3 { color: #d32f2f; text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 10px; border-bottom: 1px dotted #333; padding-bottom: 5px; }
+        .menu-note { font-style: italic; color: #aaa; font-size: 0.9rem; margin-top: 0px; margin-bottom: 20px; }
         
         .menu-item { margin-bottom: 15px; display: flex; flex-direction: column; }
-        .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
         .item-name { font-weight: bold; font-size: 1.1rem; }
-        .item-description { color: #aaa; font-size: 0.9rem; margin-top: 2px; max-width: 80%; }
+        .item-description { color: #aaa; font-size: 0.9rem; margin-top: 2px; max-width: 85%; }
         
         .item-prices-pizza { display: grid; grid-template-columns: repeat(3, 50px); gap: 5px; text-align: right; }
         .item-prices-pizza span { color: #fff; font-weight: bold; font-size: 1rem; }
-        .item-price-single { color: #fff; font-weight: bold; font-size: 1rem; text-align: right;}
+        .item-price-single { color: #fff; font-weight: bold; font-size: 1rem; text-align: right; white-space: nowrap; }
 
         footer { background-color: #000; padding: 40px; border-top: 1px solid #333; text-align: center; }
         .footer-info { margin-bottom: 20px; font-size: 1rem; color: #ccc; }
-        .footer-links { font-size: 0.9rem; color: #aaa; }
 
         @media (max-width: 900px) {
             .main-container { flex-direction: column; }
             .hero-section { padding: 40px 20px; min-height: 400px;}
             .menu-section { padding: 40px 20px; }
+            .item-price-single { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -81,14 +78,12 @@
     </header>
 
     <div class="main-container">
-        
         <section class="hero-section">
             <div class="hero-content">
                 <h2>Willkommen im Amalfi</h2>
                 <p>Original italienische Küche & Pasta Spezialitäten in Heidelberg.<br> Frisch für Sie zubereitet.</p>
                 <div class="btn-group">
                     <a onclick="document.getElementById('speisekarte').scrollIntoView({behavior: 'smooth'});" class="btn btn-red">SPEISEKARTE</a>
-                    <a href="#kontakt" class="btn">KONTAKT</a>
                 </div>
             </div>
         </section>
@@ -99,7 +94,8 @@
             <nav class="menu-categories">
                 <a onclick="switchTab('pizza', this)" class="active">Pizza</a>
                 <a onclick="switchTab('pasta', this)">Pasta</a>
-                <a onclick="switchTab('salate', this)">Salate</a>
+                <a onclick="switchTab('vorspeisen', this)">Vorspeisen & Salate</a>
+                <a onclick="switchTab('fruehstueck', this)">Frühstück</a>
                 <a onclick="switchTab('getraenke', this)">Getränke</a>
             </nav>
 
@@ -108,81 +104,13 @@
                 <div id="pizza" class="menu-tab active-tab">
                     <h3>Pizza</h3>
                     <p class="menu-note">klein ø 26cm | groß ø 32cm | Familien ø 45cm</p>
-                    
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">1. Margherita</span><div class="item-prices-pizza"><span>6,50€</span><span>7,50€</span><span>16,00€</span></div></div><span class="item-description">Tomatensauce, Käse</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">2. Prosciutto</span><div class="item-prices-pizza"><span>7,50€</span><span>8,50€</span><span>19,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Vorderschinken</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">3. Funghi</span><div class="item-prices-pizza"><span>7,50€</span><span>8,50€</span><span>19,00€</span></div></div><span class="item-description">Tomatensauce, Käse, fr. Champignons</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">4. Salami</span><div class="item-prices-pizza"><span>7,50€</span><span>8,50€</span><span>19,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Salami</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">5. Pepperoni</span><div class="item-prices-pizza"><span>7,50€</span><span>8,50€</span><span>19,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Pepperoniwurst</span></div>
-                </div>
-
-                <div id="pasta" class="menu-tab">
-                    <h3>Pasta</h3>
-                    <p class="menu-note">Wahlweise: Spaghetti, Rigatoni, Tortellini, Gnocchi</p>
-                    
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">1. Napoli</span><span class="item-price-single">7,50€</span></div><span class="item-description">Tomatensauce</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">2. Bolognese</span><span class="item-price-single">8,50€</span></div><span class="item-description">Hackfleischsauce</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">3. Panna</span><span class="item-price-single">8,50€</span></div><span class="item-description">Vorderschinken, Sahnesauce</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">4. Carbonara</span><span class="item-price-single">8,50€</span></div><span class="item-description">Vorderschinken, Ei, Sahnesauce</span></div>
-                </div>
-
-                <div id="salate" class="menu-tab">
-                    <h3>Salate</h3>
-                    <p class="menu-note">Hausgemachte frische Salate</p>
-                    
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Verde</span><span class="item-price-single">4,50€</span></div><span class="item-description">grüner Salat mit Oliven</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Mista</span><span class="item-price-single">6,00€</span></div><span class="item-description">gemischter Salat</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Italia</span><span class="item-price-single">7,50€</span></div><span class="item-description">mit Schinken, Käse und Ei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Nizza</span><span class="item-price-single">8,00€</span></div><span class="item-description">mit Thunfisch, Sardellen und Ei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Cesare</span><span class="item-price-single">8,50€</span></div><span class="item-description">mit Grana Padano, Putenstreifen</span></div>
-                </div>
-
-                <div id="getraenke" class="menu-tab">
-                    <h3>Alkoholfreie Getränke</h3>
-                    <p class="menu-note">Kaltgetränke</p>
-                    
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">S.Pellegrino Mineralwasser 0,75l</span><span class="item-price-single">6,90€</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Coca-Cola / Zero / Fanta 0,5l</span><span class="item-price-single">4,90€</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft-Schorle 0,5l</span><span class="item-price-single">4,90€</span></div></div>
-
-                    <h3 style="margin-top:30px;">Heiße Getränke</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Milchkaffee</span><span class="item-price-single">3,90€</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Espresso</span><span class="item-price-single">2,60€</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Cappuccino</span><span class="item-price-single">3,60€</span></div></div>
-                </div>
-
-            </div>
-        </section>
-    </div>
-
-    <footer id="kontakt">
-        <div class="footer-info">
-            <p><strong>RESTAURANT AMALFI</strong></p>
-            <p>Hertzstraße 1, Im Kaufland | 69126 Heidelberg</p>
-            <p>Telefon: 06221 303046</p>
-        </div>
-    </footer>
-
-    <script>
-        function switchTab(tabId, clickedButton) {
-            // 1. Alle Tabs verstecken
-            var tabs = document.getElementsByClassName('menu-tab');
-            for(var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active-tab');
-            }
-            
-            // 2. Alle Knöpfe auf "inaktiv" setzen
-            var buttons = document.querySelectorAll('.menu-categories a');
-            for(var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-            
-            // 3. Nur das gewählte Tab anzeigen
-            document.getElementById(tabId).classList.add('active-tab');
-            
-            // 4. Den geklickten Knopf rot markieren
-            clickedButton.classList.add('active');
-        }
-    </script>
-</body>
-</html>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">6. Tonno</span><div class="item-prices-pizza"><span>8,50€</span><span>9,50€</span><span>21,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Thunfisch, Zwiebeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">7. Hawaii</span><div class="item-prices-pizza"><span>8,00€</span><span>9,00€</span><span>20,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Vorderschinken, Ananas</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">8. Regina</span><div class="item-prices-pizza"><span>8,00€</span><span>9,00€</span><span>20,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Vorderschinken, fr. Champignons</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">9. Quattro Stagioni</span><div class="item-prices-pizza"><span>8,50€</span><span>9,50€</span><span>21,00€</span></div></div><span class="item-description">Tomatensauce, Käse, Salami, Vorderschinken, Champignons, Artischocken</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">10. Diavolo</span><div class="item-prices-pizza"><span>8,00€</span><span>9,00€</span><span>2
