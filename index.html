@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Amalfi - Heidelberg</title>
+    <title>Restaurant Amalfi GmbH - Heidelberg</title>
     <style>
         /* --- PROFESSIONELLES CSS-DESIGN --- */
         :root {
@@ -16,9 +16,9 @@
         }
 
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-black); color: var(--text-main); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; transition: all 0.3s; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s; cursor: pointer; }
         
-        /* HEADER */
+        /* HEADER & LOGO MIT EMOJI */
         header { background-color: var(--pure-black); padding: 20px; border-bottom: 3px solid var(--red); display: flex; justify-content: flex-end; align-items: center; position: relative; z-index: 10; }
         header::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 33.33%; height: 3px; background-color: var(--green); }
         header::before { content: ''; position: absolute; bottom: -3px; left: 33.33%; width: 33.33%; height: 3px; background-color: #fff; }
@@ -26,7 +26,7 @@
         .logo-area { text-align: right; }
         .logo-area h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; font-weight: bold; }
         .logo-area p { margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
-        .logo-area .location { font-size: 1.1rem; margin-top: 5px; }
+        .logo-area .location { font-size: 1.1rem; margin-top: 5px; font-weight: bold; }
 
         /* LAYOUT */
         .main-container { display: flex; min-height: calc(100vh - 150px); }
@@ -58,11 +58,7 @@
         /* TAB ANIMATION */
         .menu-tab { display: none; animation: fadeIn 0.4s ease-in-out; }
         .menu-tab.active-tab { display: block; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* MENÜ EINTRÄGE */
         .menu-list h3 { color: var(--red); text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 10px; border-bottom: 1px dotted #333; padding-bottom: 5px; }
@@ -74,9 +70,25 @@
         .item-description { color: var(--text-muted); font-size: 0.9rem; margin-top: 2px; max-width: 85%; }
         .item-price-single { font-weight: bold; font-size: 1rem; text-align: right; white-space: nowrap; }
 
-        /* FOOTER */
+        /* FOOTER & RECHTLICHES */
         footer { background-color: var(--pure-black); padding: 40px; border-top: 1px solid #333; text-align: center; }
         .footer-info p { margin: 5px 0; color: #ccc; }
+        .legal-links { margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); }
+        .legal-links a { margin: 0 10px; text-decoration: underline; }
+        .legal-links a:hover { color: #fff; }
+
+        /* POPUP MODALS (Impressum & Datenschutz) */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
+        .modal-content { background-color: var(--pure-black); border: 2px solid var(--red); margin: 5% auto; padding: 30px; width: 90%; max-width: 700px; max-height: 80vh; overflow-y: auto; color: #fff; border-radius: 5px; }
+        .close-btn { color: var(--red); float: right; font-size: 28px; font-weight: bold; cursor: pointer; margin-top: -15px; }
+        .close-btn:hover { color: #fff; }
+        .modal h2 { border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 0; }
+
+        /* COOKIE BANNER */
+        #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #222; border-top: 2px solid var(--red); padding: 15px 20px; z-index: 9999; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; box-sizing: border-box; }
+        #cookie-banner p { margin: 0; font-size: 0.9rem; color: #fff; }
+        .cookie-btn { background-color: var(--green); color: #fff; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 3px; }
+        .cookie-btn:hover { background-color: var(--text-main); color: #000; }
 
         /* HANDY OPTIMIERUNG */
         @media (max-width: 900px) {
@@ -87,8 +99,9 @@
             .btn { width: 100%; box-sizing: border-box; }
             .menu-section { padding: 40px 20px; }
             .menu-categories { justify-content: center; gap: 10px; }
-            .menu-categories a { font-size: 0.9rem; padding: 5px 10px; background-color: #222; border-radius: 5px; border: none; }
+            .menu-categories a { font-size: 0.9rem; padding: 5px 10px; background-color: #222; border-radius: 5px; }
             .menu-categories a.active { background-color: var(--red); }
+            #cookie-banner { flex-direction: column; text-align: center; gap: 10px; padding: 15px; }
         }
     </style>
 </head>
@@ -96,9 +109,9 @@
 
     <header>
         <div class="logo-area">
-            <h1>AMALFI</h1>
+            <h1>👨‍🍳 AMALFI 🍕</h1>
             <p>Original italienische Küche</p>
-            <div class="location">HEIDELBERG</div>
+            <div class="location">GmbH | HEIDELBERG</div>
         </div>
     </header>
 
@@ -107,7 +120,7 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h2>Willkommen im Amalfi</h2>
-                <p>Original italienische Küche & Pasta Spezialitäten in Heidelberg.<br> Frisch für Sie zubereitet.</p>
+                <p>Original italienische Küche & Eis Spezialitäten in Heidelberg.<br> Frisch für Sie zubereitet.</p>
                 <div class="btn-group">
                     <a onclick="document.getElementById('speisekarte').scrollIntoView({behavior: 'smooth'});" class="btn btn-red">SPEISEKARTE</a>
                     <a href="tel:06221303046" class="btn btn-call">📞 JETZT ANRUFEN</a>
@@ -131,7 +144,7 @@
                 
                 <div id="pizza" class="menu-tab active-tab">
                     <h3>Pizza / Pizze</h3>
-                    <p class="menu-note">ca. Ø 33 cm</p>
+                    <p class="menu-note">auf Stein gebacken, ca. Ø 33 cm</p>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Margherita</span><span class="item-price-single">10,90 €</span></div><span class="item-description">Tomatensoße, Mozzarella</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Prosciutto</span><span class="item-price-single">12,50 €</span></div><span class="item-description">Tomatensoße, Mozzarella, Vorderschinken</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Salami</span><span class="item-price-single">12,50 €</span></div><span class="item-description">Tomatensoße, Mozzarella, italienische Salami</span></div>
@@ -203,13 +216,24 @@
                 </div>
 
                 <div id="eis" class="menu-tab">
-                    <h3>Hausgemachtes Eis</h3>
+                    
+                    <h3>Eisbecher</h3>
                     <p class="menu-note" style="color: var(--text-main); font-weight: bold; border: 1px solid var(--red); padding: 10px; display: inline-block;">1 Kugel Eis nach Wahl: 2,00 €</p>
                     
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bananensplit</span><span class="item-price-single">9,90 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Banane, Schokostreusel, Schoko-Sauce und Sahne</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Eis</span><span class="item-price-single">8,90 €</span></div><span class="item-description">Eis mit Vanillegeschmack, weiße Schokoraspel, Erdbeer-Sauce und Sahne</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Magic Mouse</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Sauce und Sahne</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pinocchio Eis</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Zuckerstreusel und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Erdbeer Becher</span><span class="item-price-single">10,60 €</span></div><span class="item-description">Gemischtes Eis, frische Erdbeeren, Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Schoko Becher</span><span class="item-price-single">10,20 €</span></div><span class="item-description">Gemischtes Eis, Schokostreusel, Schoko-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Krokant Becher</span><span class="item-price-single">10,50 €</span></div><span class="item-description">Gemischtes Eis, Krokantstreusel, Eierlikör, Karamell-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Nuss Becher</span><span class="item-price-single">12,40 €</span></div><span class="item-description">Gemischtes Eis, Nüsse, Nuss-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Fruchtbecher</span><span class="item-price-single">11,60 €</span></div><span class="item-description">Gemischtes Eis, frisches Obst nach Saison, Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Schwarzwald Becher</span><span class="item-price-single">12,90 €</span></div><span class="item-description">Gemischtes Eis, Schattenmorellen, Kirschwasser, Schokostreusel, Sauce, Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amaretto Becher</span><span class="item-price-single">11,00 €</span></div><span class="item-description">Gemischtes Eis, Amarettolikör, Amarettini, Krokant, Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Joghurt Spezial</span><span class="item-price-single">11,90 €</span></div><span class="item-description">Eis mit Joghurtgeschmack, Naturjoghurt, frische Früchte, Sauce</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Malaga Becher</span><span class="item-price-single">9,90 €</span></div><span class="item-description">Gemischtes Eis, Rumrosinen, Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amarenabecher</span><span class="item-price-single">9,80 €</span></div><span class="item-description">Gemischtes Eis, Amarenakirschen, Amarena-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Magic Mouse (für Kinder)</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pinocchio Eis (für Kinder)</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Zuckerstreusel und Sahne</span></div>
                     
                     <h3>Eis-Getränke</h3>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eiskaffee</span><span class="item-price-single">klein 6,90 € | groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kaffee, Mokkabohne und Sahne</span></div>
@@ -217,10 +241,11 @@
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Milchshake</span><span class="item-price-single">5,90 € (mit Sahne 6,40 €)</span></div><span class="item-description">Milch und Eissorten nach Ihrer persönlichen Wahl</span></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Riesen Milchshake</span><span class="item-price-single">7,30 € (mit Sahne 8,20 €)</span></div></div>
 
-                    <h3>Eisportionen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Kleine Portion</span><span class="item-price-single">5,70 €</span></div><span class="item-description">3 Kugeln</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Mittlere Portion</span><span class="item-price-single">7,60 €</span></div><span class="item-description">4 Kugeln</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Große Portion</span><span class="item-price-single">9,50 €</span></div><span class="item-description">5 Kugeln</span></div>
+                    <h3>Eisportionen (Korrigiert auf 2€/Kugel)</h3>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">2 Kugeln Eis</span><span class="item-price-single">4,00 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Kleine Portion</span><span class="item-price-single">6,00 €</span></div><span class="item-description">3 Kugeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Mittlere Portion</span><span class="item-price-single">8,00 €</span></div><span class="item-description">4 Kugeln</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Große Portion</span><span class="item-price-single">10,00 €</span></div><span class="item-description">5 Kugeln</span></div>
 
                     <h3>Extras</h3>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Portion Sahne / Portion Sauce / Extra Streusel</span><span class="item-price-single">je 1,00 €</span></div></div>
@@ -235,73 +260,4 @@
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser mit Kohlensäure</span><span class="item-price-single">0,25 l. 2,40 € | 0,5 l. 3,60 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser ohne Kohlensäure</span><span class="item-price-single">0,25 l. 2,40 € | 0,5 l. 3,60 €</span></div></div>
 
-                    <h3>Alkoholfreie Getränke</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Coca-Cola / Zero / Fanta / Sprite / Spezi</span><span class="item-price-single">0,25 l. 2,90 € | 0,5 l. 4,90 €</span></div></div>
-
-                    <h3>Säfte & Schorlen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft / Orangensaft / Johannisbeer</span><span class="item-price-single">0,25 l. 3,30 € | 0,5 l. 5,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft-Schorle / Johannisbeer-Schorle</span><span class="item-price-single">0,25 l. 2,90 € | 0,5 l. 4,90 €</span></div></div>
-
-                    <h3>Biere</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils vom Fass</span><span class="item-price-single">0,3 l. 3,90 € | 0,5 l. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde Radler vom Fass</span><span class="item-price-single">0,3 l. 3,60 € | 0,5 l. 4,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils alkoholfrei</span><span class="item-price-single">0,33 l. 3,70 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Hefeweizen hell / alkoholfrei / dunkel</span><span class="item-price-single">0,5 l. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Kristallweizen</span><span class="item-price-single">0,5 l. 4,90 €</span></div></div>
-
-                    <h3>Vini / Weine</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Montepulciano d'Abruzzo DOC</span><span class="item-price-single">0,2 l. 6,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Chianti DOCG</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Barbera d'Asti</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Valpollicella</span><span class="item-price-single">0,2 l. 6,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Lambrusco dell'Emilia</span><span class="item-price-single">0,2 l. 5,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Frascati</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pinot Grigio</span><span class="item-price-single">0,2 l. 6,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Gotto d'oro Rosé</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Weinschorle</span><span class="item-price-single">0,25 l. 4,10 € | 0,5 l. 6,10 €</span></div></div>
-
-                    <h3>Aperitivi / Digestivi</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Campari Orange / Soda / Tonic</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Aperol Spritz</span><span class="item-price-single">0,2 l. 6,40 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Prosecco Glas</span><span class="item-price-single">0,1 l. 4,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Martini Bianco</span><span class="item-price-single">5 cl. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Averna / Ramazotti / Sambuca Molinari</span><span class="item-price-single">4 cl. 4,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Grappa</span><span class="item-price-single">4 cl. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amaretto / Limoncello</span><span class="item-price-single">4 cl. 4,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bailey's</span><span class="item-price-single">5 cl. 4,90 €</span></div></div>
-                </div>
-
-            </div>
-        </section>
-    </div>
-
-    <footer id="kontakt">
-        <div class="footer-info">
-            <p><strong>RESTAURANT AMALFI</strong></p>
-            <p>Hertzstraße 1, Im Kaufland | 69126 Heidelberg</p>
-            <p>Telefon: <a href="tel:06221303046">06221 303046</a></p>
-        </div>
-    </footer>
-
-    <script>
-        function switchTab(tabId, clickedButton) {
-            var tabs = document.getElementsByClassName('menu-tab');
-            for(var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active-tab');
-            }
-            
-            var buttons = document.querySelectorAll('.menu-categories a');
-            for(var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
-            
-            document.getElementById(tabId).classList.add('active-tab');
-            clickedButton.classList.add('active');
-            
-            if(window.innerWidth < 900) {
-                document.getElementById('speisekarte').scrollIntoView({behavior: 'smooth'});
-            }
-        }
-    </script>
-</body>
-</html>
+                    <h3>Alkoholfreie
