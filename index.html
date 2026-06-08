@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Amalfi - Heidelberg</title>
     <style>
-        /* --- PROFESSIONELLES CSS-DESIGN --- */
         :root {
             --red: #d32f2f;
             --dark-red: #b71c1c;
@@ -19,9 +18,7 @@
 
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-black); color: var(--text-main); line-height: 1.6; }
         a { text-decoration: none; color: inherit; transition: all 0.3s; }
-        ul { list-style: none; padding: 0; margin: 0; }
-
-        /* HEADER */
+        
         header { background-color: var(--pure-black); padding: 20px; border-bottom: 3px solid var(--red); display: flex; justify-content: flex-end; align-items: center; position: relative; z-index: 10; }
         header::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 33.33%; height: 3px; background-color: var(--green); }
         header::before { content: ''; position: absolute; bottom: -3px; left: 33.33%; width: 33.33%; height: 3px; background-color: #fff; }
@@ -31,231 +28,40 @@
         .logo-area p { margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
         .logo-area .location { font-size: 1.1rem; margin-top: 5px; }
 
-        /* MAIN LAYOUT */
         .main-container { display: flex; min-height: calc(100vh - 150px); }
 
-        /* HINTERGRUNDBILD */
-        .hero-section { 
-            flex: 1.5; 
-            position: relative; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            padding: 50px; 
-            text-align: center;
-            background-image: url('pizza.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat;
-        }
-
-        .hero-section::after { 
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 100%); 
-            z-index: 1; 
-        }
+        .hero-section { flex: 1.5; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; text-align: center; background-image: url('pizza.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .hero-section::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 100%); z-index: 1; }
         
         .hero-content { position: relative; z-index: 2; max-width: 600px; }
         .hero-content h2 { font-size: 3.5rem; margin: 0; line-height: 1.1; letter-spacing: -1px; }
         .hero-content p { font-size: 1.2rem; color: #ccc; margin: 20px 0 40px 0; }
 
-        /* KNÖPFE */
         .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
         .btn { display: inline-block; padding: 15px 30px; border: 2px solid #fff; color: #fff; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; cursor: pointer; }
         .btn:hover { background-color: #fff; color: #000; }
-        
         .btn-red { background-color: var(--red); border-color: var(--red); }
-        .btn-red:hover { background-color: var(--dark-red); border-color: var(--dark-red); color: #fff; }
+        .btn-call { background-color: var(--green); border-color: var(--green); border: none; }
 
-        .btn-call { background-color: var(--green); border-color: var(--green); }
-        .btn-call:hover { background-color: var(--dark-green); border-color: var(--dark-green); color: #fff; }
-
-        /* MENÜ */
         .menu-section { flex: 1; background-color: var(--pure-black); padding: 60px 40px; }
         .menu-section h2 { font-size: 2.5rem; margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 15px; }
 
         .menu-categories { display: flex; gap: 15px; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; flex-wrap: wrap;}
         .menu-categories a { color: var(--text-muted); font-weight: bold; font-size: 1rem; text-transform: uppercase; padding-bottom: 5px; border-bottom: 2px solid transparent; cursor: pointer; }
-        .menu-categories a:hover, .menu-categories a.active { color: var(--text-main); border-bottom-color: var(--red); }
+        .menu-categories a.active { color: var(--text-main); border-bottom-color: var(--red); }
 
         .menu-tab { display: none; }
         .menu-tab.active-tab { display: block; }
 
         .menu-list h3 { color: var(--red); text-transform: uppercase; letter-spacing: 1px; font-size: 1.2rem; margin-top: 30px; margin-bottom: 10px; border-bottom: 1px dotted #333; padding-bottom: 5px; }
-        .menu-note { font-style: italic; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
         
         .menu-item { margin-bottom: 15px; display: flex; flex-direction: column; }
         .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
         .item-name { font-weight: bold; font-size: 1.1rem; }
         .item-description { color: var(--text-muted); font-size: 0.9rem; margin-top: 2px; max-width: 85%; }
-        
         .item-price-single { font-weight: bold; font-size: 1rem; text-align: right; white-space: nowrap; }
 
-        /* FOOTER */
         footer { background-color: var(--pure-black); padding: 40px; border-top: 1px solid #333; text-align: center; }
-        .footer-info { margin-bottom: 20px; font-size: 1rem; color: #ccc; }
 
-        /* HANDY OPTIMIERUNG */
         @media (max-width: 900px) {
             .main-container { flex-direction: column; }
-            .hero-section { padding: 60px 20px; min-height: auto; }
-            .hero-content h2 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1.1rem; margin-bottom: 30px; }
-            .btn-group { flex-direction: column; gap: 10px; width: 100%; max-width: 300px; }
-            .btn { width: 100%; box-sizing: border-box; }
-            .menu-section { padding: 40px 20px; }
-            .menu-categories { justify-content: center; gap: 10px; }
-            .menu-categories a { font-size: 0.9rem; padding: 5px 10px; background-color: #222; border-radius: 5px; border: none;}
-            .menu-categories a.active { background-color: var(--red); }
-        }
-
-        @media (max-width: 480px) {
-            header { justify-content: center; text-align: center; padding: 15px; }
-            .logo-area { text-align: center; }
-            .logo-area h1 { font-size: 2rem; }
-            .menu-item-header { flex-direction: column; align-items: flex-start; gap: 2px; }
-            .item-price-single { text-align: left; margin-top: 5px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo-area">
-            <h1>AMALFI</h1>
-            <p>Original italienische Küche</p>
-            <div class="location">HEIDELBERG</div>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h2>Willkommen im Amalfi</h2>
-                <p>Original italienische Küche & Pasta Spezialitäten in Heidelberg.<br> Frisch für Sie zubereitet.</p>
-                <div class="btn-group">
-                    <a onclick="document.getElementById('speisekarte').scrollIntoView({behavior: 'smooth'});" class="btn btn-red">SPEISEKARTE</a>
-                    <a href="tel:06221303046" class="btn btn-call">📞 JETZT ANRUFEN</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="menu-section" id="speisekarte">
-            <h2>Speisekarte</h2>
-            
-            <nav class="menu-categories">
-                <a onclick="switchTab('pizza', this)" class="active">Pizza</a>
-                <a onclick="switchTab('pasta', this)">Pasta</a>
-                <a onclick="switchTab('vorspeisen', this)">Vorspeisen & Salate</a>
-                <a onclick="switchTab('fruehstueck', this)">Frühstück</a>
-                <a onclick="switchTab('getraenke', this)">Getränke</a>
-            </nav>
-
-            <div class="menu-list">
-                
-                <div id="pizza" class="menu-tab active-tab">
-                    <h3>Pizza</h3>
-                    <p class="menu-note">Pizza, Ø 33cm</p>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">1. Margherita</span><span class="item-price-single">8,50 €</span></div><span class="item-description">Tomatensauce, Käse</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">2. Prosciutto</span><span class="item-price-single">9,50 €</span></div><span class="item-description">Tomatensauce, Käse, Vorderschinken</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">3. Funghi</span><span class="item-price-single">9,50 €</span></div><span class="item-description">Tomatensauce, Käse, fr. Champignons</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">4. Salami</span><span class="item-price-single">9,50 €</span></div><span class="item-description">Tomatensauce, Käse, Salami</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">5. Pepperoni</span><span class="item-price-single">9,50 €</span></div><span class="item-description">Tomatensauce, Käse, Pepperoniwurst</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">6. Tonno</span><span class="item-price-single">10,50 €</span></div><span class="item-description">Tomatensauce, Käse, Thunfisch, Zwiebeln</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">7. Hawaii</span><span class="item-price-single">10,00 €</span></div><span class="item-description">Tomatensauce, Käse, Vorderschinken, Ananas</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">8. Regina</span><span class="item-price-single">10,00 €</span></div><span class="item-description">Tomatensauce, Käse, Vorderschinken, fr. Champignons</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">9. Quattro Stagioni</span><span class="item-price-single">10,50 €</span></div><span class="item-description">Tomatensauce, Käse, Salami, Vorderschinken, Champignons, Artischocken</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">10. Diavolo</span><span class="item-price-single">10,00 €</span></div><span class="item-description">Tomatensauce, Käse, Salami, Peperoni -scharf-</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">11. Calzone</span><span class="item-price-single">11,50 €</span></div><span class="item-description">Zugeklappt mit Vorderschinken, fr. Champignons, Salami, Hackfleischsauce</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">12. Vegetaria</span><span class="item-price-single">10,50 €</span></div><span class="item-description">Tomatensauce, Käse, fr. Champignons, Paprika, Zwiebeln, Oliven, Artischocken</span></div>
-                    <p class="menu-note" style="margin-top: 15px;">je weitere Zutat: 1,50 €</p>
-                </div>
-
-                <div id="pasta" class="menu-tab">
-                    <h3>Pasta</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rigatoni Saltati</span><span class="item-price-single">12,20 €</span></div><span class="item-description">Schinken, Käse, Champignons, Erbsen in Tomatensoße</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti al Pesto</span><span class="item-price-single">12,50 €</span></div><span class="item-description">Pesto, Sahnesoße</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Pomodoro e Basilico</span><span class="item-price-single">10,90 €</span></div><span class="item-description">Pomodoro, Zwiebeln, Knoblauch, Basilikum, Grana Padano</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rigatoni al Arrabbiata</span><span class="item-price-single">11,20 €</span></div><span class="item-description">Pomodoro, Zwiebeln, Knoblauch, scharf</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Carbonara</span><span class="item-price-single">12,90 €</span></div><span class="item-description">mit Zwiebeln, Speck, Ei in Sahnesoße</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Ragu alla Bolognese</span><span class="item-price-single">12,90 €</span></div><span class="item-description">feines Rinderragout mit Grana Padano</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tortellini alla Panna</span><span class="item-price-single">13,50 €</span></div><span class="item-description">mit Fleischfüllung, Schinken, Sahnesoße, Grana Padano</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rigatoni Amatriciana</span><span class="item-price-single">12,60 €</span></div><span class="item-description">mit Speck, Zwiebeln und pikanter Tomatensoße</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rigatoni Broccoli</span><span class="item-price-single">12,90 €</span></div><span class="item-description">mit Broccoli-Sahnesoße und Speck</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Aglio Olio e Peperoncino</span><span class="item-price-single">12,20 €</span></div><span class="item-description">mit Knoblauch, Peperoncino und Olivenöl Extra Vergina</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Spaghetti Frutti di Mare</span><span class="item-price-single">16,20 €</span></div><span class="item-description">mit Meeresfrüchten</span></div>
-
-                    <h3>Pasta aus dem Ofen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Lasagne</span><span class="item-price-single">12,90 €</span></div><span class="item-description">feines Rinderragout mit Bechamel Sahnesoße</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Rigatoni al Forno</span><span class="item-price-single">12,20 €</span></div><span class="item-description">feines Rinderragout mit Käse überbacken</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Combinazione</span><span class="item-price-single">12,90 €</span></div><span class="item-description">3 verschiedene Nudelsorten in feinem Rinderragout, mit Käse überbacken</span></div>
-                </div>
-
-                <div id="vorspeisen" class="menu-tab">
-                    <h3>Antipasti / Vorspeisen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bruschetta</span><span class="item-price-single">6,50 €</span></div><span class="item-description">frische Tomaten, Knoblauch, Basilikum</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Caprese</span><span class="item-price-single">8,50 €</span></div><span class="item-description">Tomaten, Mozzarella, Basilikum</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Carpaccio</span><span class="item-price-single">14,50 €</span></div><span class="item-description">vom Rinderfilet, Ruccola, Grana Padano</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pizza Pane</span><span class="item-price-single">7,00 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Stracciatella Suppe</span><span class="item-price-single">6,00 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Crema di Pomodoro</span><span class="item-price-single">6,50 €</span></div><span class="item-description">italienische Tomatensuppe mit Sahne und Basilikum</span></div>
-
-                    <h3>Insalata / Salate</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Verde</span><span class="item-price-single">4,50 €</span></div><span class="item-description">grüner Salat mit Oliven</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Mista</span><span class="item-price-single">6,00 €</span></div><span class="item-description">gemischter Salat</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Italia</span><span class="item-price-single">7,50 €</span></div><span class="item-description">mit Schinken, Käse und Ei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Nizza</span><span class="item-price-single">8,00 €</span></div><span class="item-description">mit Thunfisch, Sardellen und Ei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata di Pomodoro</span><span class="item-price-single">6,00 €</span></div><span class="item-description">Tomaten, Zwiebeln</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Cesare</span><span class="item-price-single">8,50 €</span></div><span class="item-description">mit Grana Padano, Putenstreifen</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Insalata Hawaii</span><span class="item-price-single">8,00 €</span></div><span class="item-description">Schinken, Ananas, Mozzarella</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Beilagensalat</span><span class="item-price-single">4,00 €</span></div></div>
-                </div>
-
-                <div id="fruehstueck" class="menu-tab">
-                    <h3>Frühstück</h3>
-                    <p class="menu-note">Montag bis Samstag von 9:00 bis 11:30 Uhr</p>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Dolce</span><span class="item-price-single">6,90 €</span></div><span class="item-description">2 Brötchen, Butter, Konfitüre</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Piccolo</span><span class="item-price-single">6,90 €</span></div><span class="item-description">2 Brötchen, Butter, Konfitüre, 1 gekochtes Landei</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Grande</span><span class="item-price-single">7,90 €</span></div><span class="item-description">2 Brötchen, Butter, Konfitüre, 2 Eier (gekocht, Spiegeleier oder Rühreier)</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amalfi</span><span class="item-price-single">9,90 €</span></div><span class="item-description">Brötchen Butter, Konfitüre, Caprese, 2 Eier</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amalfitana</span><span class="item-price-single">15,90 €</span></div><span class="item-description">1 Glas Prosecco, 1 Glas Orangensaft, 3 Brötchen, Butter, Konfitüre, 2 Eier, Käse, Schinken, Salami</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Omelette</span><span class="item-price-single">7,20 €</span></div><span class="item-description">mit 3 Eiern natur (je weitere Zutat +1,00 €)</span></div>
-                </div>
-
-                <div id="getraenke" class="menu-tab">
-                    <h3>Wasser</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">S.Pellegrino Mineralwasser</span><span class="item-price-single">0,25 l. 3,60 € | 0,75 l. 6,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Acqua Panna, Mineralwasser still</span><span class="item-price-single">0,25 l. 3,60 € | 0,75 l. 6,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser (mit/ohne Kohlensäure)</span><span class="item-price-single">0,25 l. 2,40 € | 0,5 l. 3,60 €</span></div></div>
-
-                    <h3>Softgetränke</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Coca-Cola / Zero / Fanta / Sprite / Spezi</span><span class="item-price-single">0,25 l. 2,90 € | 0,5 l. 4,90 €</span></div></div>
-
-                    <h3>Säfte & Schorlen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft / Orangensaft / Johannisbeer</span><span class="item-price-single">0,25 l. 3,30 € | 0,5 l. 5,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft-Schorle / Johannisbeer-Schorle</span><span class="item-price-single">0,25 l. 2,90 € | 0,5 l. 4,90 €</span></div></div>
-
-                    <h3>Biere</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils (Fass)</span><span class="item-price-single">0,3 l. 3,90 € | 0,5 l. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde Radler (Fass)</span><span class="item-price-single">0,3 l. 3,60 € | 0,5 l. 4,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils alkoholfrei</span><span class="item-price-single">0,33 l. 3,70 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Hefeweizen hell / dunkel / alkoholfrei</span><span class="item-price-single">0,5 l. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Kristallweizen</span><span class="item-price-single">0,5 l. 4,90 €</span></div></div>
-
-                    <h3>Aperitivi / Digestivi</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Campari Orange / Soda / Tonic</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Aperol Spritz (Frizzante, Aperol, Prosecco)</span><span class="item-price-single">0,2 l. 6,40 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Prosecco Glas</span><span class="item-price-single">0,1 l. 4,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Martini Bianco</span><span class="item-price-single">5 cl. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Averna / Ramazotti / Sambuca Molinari</span><span class="item-price-single">4 cl. 4,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Grappa</span><span class="item-price-single">4 cl. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Amaretto / Limoncello</span><span class="item-price-single">4 cl. 4,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Bailey's</span><span class="item-price-single">5 cl. 4,90 €</span></div></div>
-
-                    <h3>Cafeteria (Heiße
