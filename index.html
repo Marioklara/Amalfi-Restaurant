@@ -68,7 +68,7 @@
         .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
         .item-name { font-weight: bold; font-size: 1.1rem; }
         .item-description { color: var(--text-muted); font-size: 0.9rem; margin-top: 2px; max-width: 85%; }
-        .item-price-single { font-weight: bold; font-size: 1rem; text-align: right; white-space: nowrap; }
+        .item-price-single { font-weight: bold; font-size: 1rem; text-align: right; white-space: nowrap; line-height: 1.4; }
 
         /* FOOTER & RECHTLICHES */
         footer { background-color: var(--pure-black); padding: 40px; border-top: 1px solid #333; text-align: center; }
@@ -234,10 +234,10 @@
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pinocchio Eis (für Kinder)</span><span class="item-price-single">6,90 €</span></div><span class="item-description">Gemischtes Eis, Schokolinsen, Zuckerstreusel und Sahne</span></div>
                     
                     <h3>Eis-Getränke</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eiskaffee</span><span class="item-price-single">klein 6,90 € | groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kaffee, Mokkabohne und Sahne</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eisschokolade</span><span class="item-price-single">klein 6,90 € | groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kakao, Schokostreusel, Schoko-Sauce und Sahne</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Milchshake</span><span class="item-price-single">5,90 € (mit Sahne 6,40 €)</span></div><span class="item-description">Milch und Eissorten nach Ihrer persönlichen Wahl</span></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Riesen Milchshake</span><span class="item-price-single">7,30 € (mit Sahne 8,20 €)</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eiskaffee</span><span class="item-price-single">klein 6,90 €<br>groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kaffee, Mokkabohne und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Eisschokolade</span><span class="item-price-single">klein 6,90 €<br>groß 8,30 €</span></div><span class="item-description">Eis mit Vanillegeschmack, Kakao, Schokostreusel, Schoko-Sauce und Sahne</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Milchshake</span><span class="item-price-single">5,90 €<br>mit Sahne 6,40 €</span></div><span class="item-description">Milch und Eissorten nach Ihrer persönlichen Wahl</span></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Riesen Milchshake</span><span class="item-price-single">7,30 €<br>mit Sahne 8,20 €</span></div></div>
 
                     <h3>Eisportionen ( 2€/Kugel)</h3>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">2 Kugeln Eis</span><span class="item-price-single">4,00 €</span></div></div>
@@ -253,21 +253,21 @@
 
                 <div id="getraenke" class="menu-tab">
                     <h3>Wasser</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">S.Pellegrino Mineralwasser</span><span class="item-price-single">0,25 . 3,60 €  |  0,75 . 6,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Acqua Panna, Mineralwasser still</span><span class="item-price-single">0,25 l. 3,60 € | 0,75 l. 6,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser mit Kohlensäure</span><span class="item-price-single">0,25 l. 2,40 € | 0,5 l. 3,60 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser ohne Kohlensäure</span><span class="item-price-single">0,25 l. 2,40 € | 0,5 l. 3,60 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">S.Pellegrino Mineralwasser</span><span class="item-price-single">0,25 l. 3,60 €<br>0,75 l. 6,90 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Acqua Panna, Mineralwasser still</span><span class="item-price-single">0,25 l. 3,60 €<br>0,75 l. 6,90 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser mit Kohlensäure</span><span class="item-price-single">0,25 l. 2,40 €<br>0,5 l. 3,60 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Tafelwasser ohne Kohlensäure</span><span class="item-price-single">0,25 l. 2,40 €<br>0,5 l. 3,60 €</span></div></div>
 
                     <h3>Alkoholfreie Getränke</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Coca-Cola / Zero / Fanta / Sprite / Spezi</span><span class="item-price-single">0,25 l. 2,90 € | 0,5 l. 4,90 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Coca-Cola / Zero / Fanta / Sprite / Spezi</span><span class="item-price-single">0,25 l. 2,90 €<br>0,5 l. 4,90 €</span></div></div>
 
                     <h3>Säfte & Schorlen</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft / Orangensaft / Johannisbeer</span><span class="item-price-single">0,25 l. 3,30 € | 0,5 l. 5,20 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft-Schorle / Johannisbeer-Schorle</span><span class="item-price-single">0,25 l. 2,90 € | 0,5 l. 4,90 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft / Orangensaft / Johannisbeer</span><span class="item-price-single">0,25 l. 3,30 €<br>0,5 l. 5,20 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Apfelsaft-Schorle / Johannisbeer-Schorle</span><span class="item-price-single">0,25 l. 2,90 €<br>0,5 l. 4,90 €</span></div></div>
 
                     <h3>Biere</h3>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils vom Fass</span><span class="item-price-single">0,3 l. 3,90 € | 0,5 l. 4,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde Radler vom Fass</span><span class="item-price-single">0,3 l. 3,60 € | 0,5 l. 4,60 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils vom Fass</span><span class="item-price-single">0,3 l. 3,90 €<br>0,5 l. 4,90 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde Radler vom Fass</span><span class="item-price-single">0,3 l. 3,60 €<br>0,5 l. 4,60 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Welde No.1 Slow Beer Pils alkoholfrei</span><span class="item-price-single">0,33 l. 3,70 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Hefeweizen hell / alkoholfrei / dunkel</span><span class="item-price-single">0,5 l. 4,90 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Kristallweizen</span><span class="item-price-single">0,5 l. 4,90 €</span></div></div>
@@ -281,7 +281,7 @@
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Frascati</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Pinot Grigio</span><span class="item-price-single">0,2 l. 6,20 €</span></div></div>
                     <div class="menu-item"><div class="menu-item-header"><span class="item-name">Gotto d'oro Rosé</span><span class="item-price-single">0,2 l. 5,90 €</span></div></div>
-                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Weinschorle</span><span class="item-price-single">0,25 l. 4,10 € | 0,5 l. 6,10 €</span></div></div>
+                    <div class="menu-item"><div class="menu-item-header"><span class="item-name">Weinschorle</span><span class="item-price-single">0,25 l. 4,10 €<br>0,5 l. 6,10 €</span></div></div>
                 </div>
 
             </div>
